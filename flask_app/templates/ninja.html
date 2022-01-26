@@ -12,10 +12,11 @@
 <body>
     <h1>New Ninjas</h1>
     <a href="/dojo" style="color: crimson;font-weight: bolder">HOME</a>
-    <form action = "/ninja" method="POST">
-        <select name = "dojo_id">
-            {%for dojos in all_dojos %}
-            <option value={{dojo.id}}>{{dojo.name}}</option>
+    <form action = "/addninja" method="POST">
+        <label for="dojo">Dojo:</label>
+        <select name = "dojo.location">
+            {%for dojo in all_dojos %}
+            <option value="{{dojo.id}}">{{dojo.location}}</option>
             {% endfor%}
         </select>
         <p>FIRST NAME:<input type= "text" name="first"></p>

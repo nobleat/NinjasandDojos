@@ -9,15 +9,25 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>New Dojos</h1>
-    <a href="/ninja" style="color: crimson;font-weight: bolder">ADD NINJA</a>
-    <form action = "/dojo" method="POST">
-        <p>LOCATION:<input type= "text" name="location"></p>
-        <button>CREATE</button>
-    </form>
-    <div>
-        <h1>All Dojos</h1>
-        <p>{{dojos.location}}</p>
+    <div id="dojo">
+        <div id="dojoform">
+        <h1>New Dojos</h1>
+        <form action = "/adddojo" method="POST">
+            <p>LOCATION:<input type= "text" name="location"></p>
+            <button>CREATE</button>
+        </form>
+        </div>
+        <div id="alldojos">
+            <h1>All Dojos</h1>
+            <div>
+                <ul>
+                    {%for dojo in all_dojos %}
+                    <li><a href="/dojo/{{dojo.id}}">{{dojo.location}}</a></li>
+                    {%endfor%}
+                </ul>
+            </div>
+        </div>
     </div>
+    <a href="/ninja" style="color: crimson;font-weight: bolder" id="ninlink">ADD NINJA</a>
 </body>
 </html>

@@ -10,25 +10,27 @@
 
 </head>
 <body>
-    <h1>Show Dojo</h1>
+    <h1>{{dojo.name}} Dojo</h1>
     <a href="/dojo" style="color: crimson;font-weight: bolder">HOME</a>
     <div>
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Age</th>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Age</th>
                 </tr>
             </thead>
             <tbody>
+                {% for ninja in dojos %}
                 <tr>
-                <th scope="row">1</th>
-                <td>{{ninja.first_name}}</td>
-                <td>{{ninja.last_name}}</td>
-                <td>{{ninja.age}}</td>
+                    <td>{{ninja.id}}</td>
+                    <td>{{ninja.first_name}}</td>
+                    <td>{{ninja.last_name}}</td>
+                    <td>{{ninja.age}}</td>
                 </tr>
+                {%endfor%}
                 </tbody>
         </table>
     </div>

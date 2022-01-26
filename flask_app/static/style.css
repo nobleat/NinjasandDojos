@@ -4,4 +4,23 @@
 
 body{
     background-color: aquamarine;
+    text-align: center;
+}
+
+#dojo{
+    display: flex;
+    margin-top: 50px;
+}
+
+#dojoform{
+    margin-left: 50px;
+}
+
+#alldojos{
+    border: 2px solid black;
+    width: 300px;
+}
+
+ul{
+    list-style-type: none;
 }

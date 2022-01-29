@@ -11,18 +11,23 @@
 </head>
 <body>
     <h1>New Ninjas</h1>
-    <a href="/dojo" style="color: crimson;font-weight: bolder">HOME</a>
-    <form action = "/addninja" method="POST">
-        <label for="dojo">Dojo:</label>
-        <select name = "dojo.location">
-            {%for dojo in all_dojos %}
+    <a href="/" style="color: crimson;font-weight: bolder">HOME</a>
+    <form action = "/addninja" method ="post">
+        <div id='ninjaform'>
+        <label for='dojo'>Dojo:</label>
+        <select name = "dojo_id">
+            {%for dojo in dojos %}
             <option value="{{dojo.id}}">{{dojo.location}}</option>
             {% endfor%}
         </select>
-        <p>FIRST NAME:<input type= "text" name="first"></p>
-        <p>LAST NAME:<input type= "text" name="last"></p>
-        <p>AGE:<input type= "text" name="age"></p>
+        <label for='first_name'>FIRST NAME:</label>
+        <input type= "text" name="first_name">
+        <label for='last_name'>LAST NAME:</label>
+        <input type= "text" name="last_name">
+        <label for='age'>AGE:</label>
+        <input type= "text" name="age">
         <button>CREATE</button>
+        </div>
     </form>
 </body>
 </html>
